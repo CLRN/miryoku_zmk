@@ -1,0 +1,12 @@
+name: 'Build corne nice_nano QWERTY (dynamic macros + game layer)'
+on: workflow_dispatch
+jobs:
+  build:
+    uses: ./.github/workflows/main.yml
+    secrets: inherit
+    with:
+      board: '["nice_nano@2.0.0//zmk"]'
+      shield: '["corne_left","corne_right"]'
+      alphas: '["QWERTY"]'
+      modules: '["Anodynous/zmk-dynamic-macros/v0.3"]'
+      kconfig: '["CONFIG_ZMK_BEHAVIOR_DYNAMIC_MACRO_FEEDBACK_OFF=y"]'
