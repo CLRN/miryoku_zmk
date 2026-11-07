@@ -1,8 +1,9 @@
 // Copyright 2021 Manna Harbour
 // https://github.com/manna-harbour/miryoku
 
-// Gaming layer: left half (incl. thumbs) sends plain keys with no hold-tap,
-// right half is transparent so it keeps the Base hold-taps and layer keys.
+// Gaming layer: left half sends plain keys with no hold-tap, except the thumbs,
+// which tap Esc/Space/Tab and hold Alt/Ctrl/Shift (no layer keys on this half).
+// Right half is transparent so it keeps the Base hold-taps and layer keys.
 // Enter: hold Nav (Space) or Mouse (Tab) and double-tap T.
 // Exit: hold Sym/Num/Fun (right thumbs) and double-tap the Base key (U position).
 #define MIRYOKU_LAYER_LIST \
@@ -37,7 +38,7 @@ MIRYOKU_X(GAME,   "Game")
 &kp Q,             &kp W,             &kp E,             &kp R,             &kp T,             &trans,            &trans,            &trans,            &trans,            &trans,            \
 &kp A,             &kp S,             &kp D,             &kp F,             &kp G,             &trans,            &trans,            &trans,            &trans,            &trans,            \
 &kp Z,             &kp X,             &kp C,             &kp V,             &kp B,             &trans,            &trans,            &trans,            &trans,            &trans,            \
-U_NP,              U_NP,              &kp ESC,           &kp SPACE,         &kp TAB,           &trans,            &trans,            &trans,            U_NP,              U_NP
+U_NP,              U_NP,              U_MT(LALT, ESC),   U_MT(LCTRL, SPACE),U_MT(LSHFT, TAB),  &trans,            &trans,            &trans,            U_NP,              U_NP
 
 #define MIRYOKU_LAYER_NAV \
 U_BOOT,            &u_to_U_TAP,       &u_to_U_EXTRA,     &u_to_U_BASE,      &u_to_U_GAME,      U_RDO,             U_PST,             U_CPY,             U_CUT,             U_UND,             \
